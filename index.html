@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Miami Luxury Realty</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER / HERO -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Luxury real estate in Miami’s most exclusive neighborhoods</h1>
+        <p>
+          Premium condos, waterfront homes and investment properties for serious buyers
+          looking for clarity, trust and a smooth process.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Request a consultation</a>
+          <a href="#featured" class="btn btn-outline">View featured properties</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Puedes cambiar esta imagen por una real -->
+        <div class="hero-image-placeholder">Miami Skyline</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURED PROPERTIES -->
+  <section id="featured" class="section">
+    <div class="container">
+      <h2 class="section-title">Featured properties</h2>
+      <p class="section-subtitle">
+        Selected listings that represent the best of Miami’s luxury market.
+      </p>
+      <div class="properties-grid">
+        <!-- Property 1 -->
+        <article class="property-card">
+          <div class="property-image property-image-1"></div>
+          <div class="property-body">
+            <h3>Oceanfront Penthouse – South Beach</h3>
+            <p class="property-meta">3 Beds · 4 Baths · 250 m² · $3,200,000</p>
+            <p class="property-desc">
+              Corner penthouse with panoramic ocean views, private terrace and direct beach access.
+            </p>
+            <button class="btn btn-secondary js-request-info" data-property="Oceanfront Penthouse – South Beach">
+              Request info
+            </button>
+          </div>
+        </article>
+
+        <!-- Property 2 -->
+        <article class="property-card">
+          <div class="property-image property-image-2"></div>
+          <div class="property-body">
+            <h3>Bayview Condo – Brickell</h3>
+            <p class="property-meta">2 Beds · 3 Baths · 140 m² · $1,450,000</p>
+            <p class="property-desc">
+              High-rise condo with bay views, floor-to-ceiling windows and private amenities.
+            </p>
+            <button class="btn btn-secondary js-request-info" data-property="Bayview Condo – Brickell">
+              Request info
+            </button>
+          </div>
+        </article>
+
+        <!-- Property 3 -->
+        <article class="property-card">
+          <div class="property-image property-image-3"></div>
+          <div class="property-body">
+            <h3>Modern Family Home – Coconut Grove</h3>
+            <p class="property-meta">4 Beds · 3 Baths · 300 m² · $2,100,000</p>
+            <p class="property-desc">
+              Contemporary home on a quiet street, with pool, garden and spacious living areas.
+            </p>
+            <button class="btn btn-secondary js-request-info" data-property="Modern Family Home – Coconut Grove">
+              Request info
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Why work with our team</h2>
+      <p class="section-subtitle">
+        We combine deep local expertise with a structured, transparent process.
+      </p>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Serious buyers, serious properties</h3>
+          <p>
+            We focus on qualified buyers and high-end listings, so everyone’s time
+            goes into real opportunities.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Deep local expertise</h3>
+          <p>
+            Detailed insight into Miami’s most desirable neighborhoods, including
+            South Beach, Brickell and Coconut Grove.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Clear, guided process</h3>
+          <p>
+            From first call to closing, every step is communicated clearly, with
+            regular updates and professional follow-up.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS WE COVER -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Areas we cover</h2>
+      <p class="section-subtitle">
+        Focused on Miami’s most in-demand neighborhoods for luxury and investment.
+      </p>
+      <div class="areas-grid">
+        <article class="area-card">
+          <h3>South Beach</h3>
+          <p>
+            Luxury condos, ocean views and a vibrant lifestyle steps away from the beach.
+          </p>
+        </article>
+        <article class="area-card">
+          <h3>Brickell</h3>
+          <p>
+            Miami’s financial district, modern high-rises and prime options for investors.
+          </p>
+        </article>
+        <article class="area-card">
+          <h3>Coconut Grove</h3>
+          <p>
+            Quiet, tree-lined streets, family homes and a more residential atmosphere.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / REQUEST CONSULTATION -->
+  <section id="contact" class="section section-alt">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <h2 class="section-title">Ready to discuss your next Miami property?</h2>
+        <p class="section-subtitle">
+          Tell us what you’re looking for and we’ll get back with curated options
+          that match your budget and goals.
+        </p>
+      </div>
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name*</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="budget">Budget range</label>
+            <select id="budget" name="budget">
+              <option value="">Select an option</option>
+              <option value="1-2">$1M – $2M</option>
+              <option value="2-3">$2M – $3M</option>
+              <option value="3-5">$3M – $5M</option>
+              <option value="5plus">$5M+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="type">Property type</label>
+            <select id="type" name="type">
+              <option value="">Select an option</option>
+              <option value="condo">Condo</option>
+              <option value="house">House</option>
+              <option value="investment">Investment property</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">What are you looking for?</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <!-- Campo oculto para propiedad seleccionada desde “Request info” -->
+        <input id="property-field" name="property" type="hidden" />
+
+        <button type="submit" class="btn btn-primary">Request a consultation</button>
+        <p class="form-note">
+          This is a demo website for portfolio purposes. No real inquiries will be processed.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Miami Luxury Realty · Demo website for portfolio purposes.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
