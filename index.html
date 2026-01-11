@@ -8,10 +8,28 @@
 </head>
 <body>
   <!-- HEADER / HERO -->
-  <header class="hero">
+  <header>
+  <!-- TOP NAVBAR -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-text">Miami Luxury Realty</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#featured">Properties</a>
+        <a href="#why-us">Why us</a>
+        <a href="#areas">Areas</a>
+      </nav>
+      <a href="#contact" class="btn btn-outline topbar-cta">Schedule a call</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1>Luxury real estate in Miami’s most exclusive neighborhoods</h1>
+        <h1 class="text-light">Luxury real estate in Miami’s most exclusive neighborhoods</h1>
         <p>
           Premium condos, waterfront homes and investment properties for serious buyers
           looking for clarity, trust and a smooth process.
@@ -22,11 +40,12 @@
         </div>
       </div>
       <div class="hero-image">
-        <!-- Puedes cambiar esta imagen por una real -->
         <div class="hero-image-placeholder">Miami Skyline</div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- FEATURED PROPERTIES -->
   <section id="featured" class="section">
@@ -85,7 +104,7 @@
   </section>
 
   <!-- WHY CHOOSE US -->
-  <section class="section section-alt">
+  <section id="why-us" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Why work with our team</h2>
       <p class="section-subtitle">
@@ -118,34 +137,53 @@
   </section>
 
   <!-- AREAS WE COVER -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Areas we cover</h2>
-      <p class="section-subtitle">
-        Focused on Miami’s most in-demand neighborhoods for luxury and investment.
+<section id="areas" class="section section-light areas-section">
+  <div class="container">
+    <header class="areas-header">
+      <h2 class="areas-title">Areas we cover</h2>
+      <p class="areas-subtitle">
+        Focused on Miami’s most in-demand neighborhoods for luxury living and investment.
       </p>
-      <div class="areas-grid">
-        <article class="area-card">
-          <h3>South Beach</h3>
-          <p>
-            Luxury condos, ocean views and a vibrant lifestyle steps away from the beach.
-          </p>
-        </article>
-        <article class="area-card">
-          <h3>Brickell</h3>
-          <p>
-            Miami’s financial district, modern high-rises and prime options for investors.
-          </p>
-        </article>
-        <article class="area-card">
-          <h3>Coconut Grove</h3>
-          <p>
-            Quiet, tree-lined streets, family homes and a more residential atmosphere.
-          </p>
-        </article>
-      </div>
+      <a href="#contact" class="areas-link">
+        Explore neighborhoods
+        <span class="areas-link-icon">↗</span>
+      </a>
+    </header>
+
+    <div class="areas-cards">
+      <article class="areas-card">
+        <div class="areas-card-image-wrapper">
+          <img src="casa moderna.jpg" alt="South Beach" class="areas-card-image" />
+        </div>
+        <h3 class="areas-card-title">South Beach</h3>
+        <p class="areas-card-text">
+          Oceanfront condos, iconic skyline and a vibrant lifestyle by the water.
+        </p>
+      </article>
+
+      <article class="areas-card">
+        <div class="areas-card-image-wrapper">
+          <img src="lush.jpg" alt="Brickell" class="areas-card-image" />
+        </div>
+        <h3 class="areas-card-title">Brickell</h3>
+        <p class="areas-card-text">
+          Miami’s financial core, glass towers and strong long‑term rental demand.
+        </p>
+      </article>
+
+      <article class="areas-card">
+        <div class="areas-card-image-wrapper">
+          <img src="miami house.jpg" alt="Coconut Grove" class="areas-card-image" />
+        </div>
+        <h3 class="areas-card-title">Coconut Grove</h3>
+        <p class="areas-card-text">
+          Lush, residential streets, private homes and a quieter coastal lifestyle.
+        </p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- CONTACT / REQUEST CONSULTATION -->
   <section id="contact" class="section section-alt">
