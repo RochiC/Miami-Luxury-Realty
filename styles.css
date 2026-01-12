@@ -367,7 +367,7 @@ body {
 
 .areas-title {
   font-family: var(--font-heading);  /* Playfair Display */
-  font-size: 1.4rem;  /* Mismo tamaño */
+  font-size: 1.4rem;  /* Mismo tamaño   d*/
   line-height: 1.2;
   letter-spacing: 0.04em;  /* Igual que section-title */
   font-weight: 500;  /* Agregar esto */
