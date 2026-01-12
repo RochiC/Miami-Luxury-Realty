@@ -70,8 +70,6 @@ body {
   font-family: var(--font-heading);
   letter-spacing: 0.04em;
   font-weight: 500;
-  font-size: 1.4rem;
-  margin: 0 0 0.4rem;
   color: var(--text-primary); /* o text-accent si querés azul por defecto */
     text-align: center;  /* ← Agregar esto */
 }
@@ -368,14 +366,16 @@ body {
 }
 
 .areas-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: 0rem;
+  font-family: var(--font-heading);  /* Playfair Display */
+  font-size: 1.4rem;  /* Mismo tamaño */
+  line-height: 1.2;
+  letter-spacing: 0.04em;  /* Igual que section-title */
+  font-weight: 500;  /* Agregar esto */
   color: var(--text-primary);
   margin: 0 0 0.75rem;
-  text-align: center;  /* ← Agregar si no lo tiene */
+  text-align: center;
 }
+
 
 .areas-subtitle {
   margin: 0 0 1.9rem;
