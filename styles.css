@@ -16,6 +16,11 @@
 
 }
 
+html {
+  scroll-behavior: smooth;  /* ← Esto hace que TODO el scroll sea suave */
+}
+
+
 *,
 *::before,
 *::after {
@@ -68,6 +73,7 @@ body {
   font-size: 1.4rem;
   margin: 0 0 0.4rem;
   color: var(--text-primary); /* o text-accent si querés azul por defecto */
+    text-align: center;  /* ← Agregar esto */
 }
 
 
@@ -84,44 +90,53 @@ body {
   gap: 0.75rem;
 }
 
+/* Contenedor de la imagen */
 .hero-image {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
-.hero-image-placeholder {
+/* La imagen misma */
+.hero-image img {
   width: 100%;
-  max-width: 380px;
-  aspect-ratio: 4 / 3;
-  border-radius: 24px;
-  border: 1px solid rgba(148, 163, 184, 0.3);
-  background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.8)),
-    url("https://images.pexels.com/photos/2407636/pexels-photo-2407636.jpeg?auto=compress&cs=tinysrgb&w=1200");
-  background-size: cover;
-  background-position: center;
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 1rem 1.25rem;
-  color: rgba(226, 232, 240, 0.9);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.8rem;
+  max-width: 420px;
+  height: auto;
+  border-radius: 0;  /* Sin redondeado */
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+  filter: brightness(0.75) contrast(1.15);  /* Oscurece la imagen */
+}´
+
+/* Efecto hover */
+.hero-image img:hover {
+  filter: brightness(0.85) contrast(1.15);  /* Menos oscuro al pasar el mouse */
+  transform: scale(1.02);
 }
+
+
 
 /* SECTIONS */
 
 .section {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
 }
 
 .section-alt {
+  padding: 5rem 0 10rem 0;
   background: radial-gradient(circle at top, #020617, #020617);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-alt .section-title {
+  color: #ffffff;  /* ← Título blanco */
+}
+
+.section-alt .section-subtitle {
+    margin: 0 auto 5rem;  /* ← Aún más separación en section-alt */
+  color: rgba(226, 232, 240, 0.8);  /* ← Subtítulo gris claro */
 }
 
 .section-title {
@@ -130,10 +145,11 @@ body {
 }
 
 .section-subtitle {
-  margin: 0 0 2rem;
+  margin: 0 auto 2rem;  
   color: var(--text-secondary);
   max-width: 34rem;
   font-size: 0.95rem;
+    text-align: center;  /* ← Agregar esto */
 }
 
 /* BUTTONS */
@@ -151,39 +167,87 @@ body {
   text-decoration: none;
   transition: all 0.18s ease;
   white-space: nowrap;
+  position: relative;  /* ← Agregar esto */
 }
 
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Botón primario */
 .btn-primary {
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: #0b1120;
   box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4);
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.5);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* Botón outline */
 .btn-outline {
   background: transparent;
-  color: var(--text-primary);
+  color: #ffffff;
   border-color: rgba(148, 163, 184, 0.7);
+  transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
   background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Botón secundario */
 .btn-secondary {
   background: rgba(15, 23, 42, 0.95);
-  color: var(--text-primary);
+  color: #ffffff;  /* ← Cambia a blanco */
   border-color: rgba(148, 163, 184, 0.5);
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
   background: rgba(15, 23, 42, 1);
   border-color: var(--accent);
+  transform: translateY(-2px);
+    color: #ffffff;  /* ← Agregar esto también */
 }
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;  /* ← Solo una definición */
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.btn-outline:hover {
+  background: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+}
+
 
 /* PROPERTIES */
 
@@ -201,7 +265,7 @@ body {
 }
 
 .property-card {
-  border-radius: 18px;
+    border-radius: 0;  /* ← Cambia de 18px a 0 */
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.06);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
@@ -221,7 +285,7 @@ body {
 }
 
 .property-image-2 {
-  background-image: url("https://images.pexels.com/photos/2480605/pexels-photo-2480605.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-image: url("view.jpg");
 }
 
 .property-image-3 {
@@ -266,20 +330,27 @@ body {
 
 .feature-card {
   background: #020617;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--border-subtle);
   padding: 1.3rem 1.4rem;
+    text-align: center;  /* ← Agregar esto */
 }
 
 .feature-card h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;  /* ← Aumento el tamaño también */
+  color: #ffffff;
+  margin: 0rem 0 1rem;  /* ← Mismo margen */
+  letter-spacing: 0.04em;
+  font-weight: 500;
 }
+
 
 .feature-card p {
   margin: 0;
   color: var(--text-secondary);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 /* AREAS */
@@ -298,11 +369,12 @@ body {
 
 .areas-title {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0rem;
   color: var(--text-primary);
   margin: 0 0 0.75rem;
+  text-align: center;  /* ← Agregar si no lo tiene */
 }
 
 .areas-subtitle {
@@ -349,6 +421,9 @@ body {
   .areas-cards {
     grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
+    .hero-image img {
+    max-width: 350px;  /* Más pequeña en mobile */
+  }
   }
 
   .areas-card:nth-child(2) {
@@ -500,11 +575,12 @@ textarea {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
   background: #020617;
-  color: var(--text-primary);
+  color: #ffffff;  /* ← Cambia de var(--text-primary) a #ffffff */
   padding: 0.55rem 0.7rem;
   font-family: inherit;
   font-size: 0.9rem;
 }
+
 
 input:focus,
 select:focus,
@@ -562,8 +638,12 @@ textarea {
 }
 
 @media (max-width: 600px) {
-  .hero {
-    padding-top: 3rem;
+  .hero 
+  .hero-image img  {
+    padding-top: 3rem; 
+    max-width: 100%;  /* Ancho completo en celular */
+    border-radius: 16px;  /* Menos redondeado */
+  }
   }
 
   .form-row {
@@ -574,7 +654,7 @@ textarea {
   .section-subtitle {
     max-width: 100%;
   }
-}
+
 
 header {
   position: relative;
@@ -609,7 +689,7 @@ header {
   font-size: 0.95rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: #b8bbc2;  /* ← Cambia a este gris más visible */
 }
 
 .brand-mark {
@@ -622,6 +702,7 @@ header {
 
 .brand-text {
   font-weight: 600;
+color: #b8bbc2;
 }
 
 .nav-links {
@@ -629,15 +710,16 @@ header {
   align-items: center;
   gap: 1.5rem;
   font-size: 0.85rem;
-}
+color: #b8bbc2;}
 
 .nav-links a {
-  color: var(--text-secondary);
+  color: #b8bbc2;  /* Mismo gris que los links */
   text-decoration: none;
   position: relative;
   padding-bottom: 0.2rem;
   transition: color 0.16s ease;
 }
+
 
 .nav-links a::after {
   content: "";
@@ -651,7 +733,7 @@ header {
 }
 
 .nav-links a:hover {
-  color: var(--text-primary);
+color: #b8bbc2;
 }
 
 .nav-links a:hover::after {
@@ -666,7 +748,10 @@ header {
 /* Ajuste hero porque ahora hay topbar arriba */
 
 .hero {
-  padding: 4.5rem 0 3.5rem;
+    padding: 4.5rem 0 3.5rem;
+  min-height: 530px;  /* Ajusta el valor que prefieras: 600px, 700px, 800px */
+  display: flex;
+  align-items: center;
   background: radial-gradient(circle at top right, #1e293b, #020617);
   border-bottom: 1px solid var(--border-subtle);
 }
