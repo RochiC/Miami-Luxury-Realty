@@ -443,6 +443,21 @@ body {
   font-size: 0.9rem;
 }
 
+.areas-cover {
+  width: 100%;
+  padding: 80px 20px 170px 20px;  /* Espacio vertical */
+  background-color: #f5f5f5;
+  overflow: hidden;  /* Evita que se salga contenido */
+}
+
+.areas-cover-content {
+  max-width: 1200px;
+    width: 100%;
+  margin: 0 auto;  /* Centra el contenido */
+  padding: 0 20px;  /* Padding horizontal para responsive */
+}
+
+
 /* CONTACT */
 
 .contact-container {
@@ -693,3 +708,38 @@ header {
   background: #ffffff;
   color: #111827;
 }
+
+/* ANIMACIÓN DE APARICIÓN DE TARJETAS*/
+/* Estado inicial - las tarjetas están abajo y transparentes */
+.reveal-card {
+  opacity: 0;
+  transform: translateY(120px);  /* ← Aumenta este valor para que salga desde más abajo */
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Estado visible - cuando se detecta al hacer scroll */
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;  /* Pequeño delay igual para todas */
+}
+
+.reveal-card:nth-child(2) {
+  transform: translateY(110px);  /* 80px (animación) + 30px (posición final) */
+}
+
+.reveal-card:nth-child(2).visible {
+  transform: translateY(30px);  /* Baja 30px respecto a las otras */
+}
+
